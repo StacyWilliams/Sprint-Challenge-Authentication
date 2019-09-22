@@ -4,7 +4,7 @@ const server = require('../api/server');
 
 describe('auth-router.js', () => {
   beforeEach(async () => {
-    await db('auth').truncate();
+    await db('users').truncate();
   });
 
   describe('POST to /api/auth/register', () => {

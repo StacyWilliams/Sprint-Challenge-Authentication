@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Users = require('./auth-model');
-const secrets = require('./secrets');
+const secrets = require('../config/secrets.js');
 const restricted = require('./authenticate-middleware');
 
 router.post('/register', async (req, res) => {
@@ -27,7 +27,7 @@ router.post('/login', (req, res) => {
         res.status(401).json({ error: 'incorrect username and/or password' })
       } else {
         const token = generateToken(user);
-        res.status(200).json({
+        res.status(201).json({
           message: `Welcome, ${user.username}`,
           token
         })

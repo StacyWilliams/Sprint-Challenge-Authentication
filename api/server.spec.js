@@ -13,10 +13,10 @@ request(server)
 });
 //assert that we get an http status code 200
         });
-        it("should return { api: 'Sprint Challenge Server up and running!!' }", async () => {
+        it("should return { message: 'Sprint Challenge Server up and running!!'}", async () => {
             const res = await request(server).get('/');
-            expect(res.body.api).toBe('Sprint Challenge Server up and running!!' );
-            expect(res.body).toEqual({api: 'Sprint Challenge Server up and running!!'});
+            expect(res.body.message).toBe('Sprint Challenge Server up and running!!' );
+            expect(res.body).toEqual({message: 'Sprint Challenge Server up and running!!'});
             
         })
 
