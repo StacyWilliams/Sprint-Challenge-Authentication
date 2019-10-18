@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', (req, res) => {
   // implement login
   let { username, password } = req.body;
-  Users.getByFilter({ username })
+  Users.findBy({ username })
     .first()
     .then(user => {
       if(!user && !bcrypt.compareSync(password, user.password)) {
